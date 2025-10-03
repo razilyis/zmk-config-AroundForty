@@ -2,37 +2,36 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#include <behaviors/rgbled_widget.dtsi>
+// #include <behaviors/rgbled_widget.dtsi> // 使わないならコメントアウト
 
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
 };
 
-/ {
+&hold_tap {
+    // 全体設定を入れたい場合（任意）
+    // tapping-term-ms = <200>;
+    // flavor = "balanced";
+};
+
+ / {
     combos { compatible = "zmk,combos"; };
 
-    macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-    };
+    // ★ カスタムマクロは削除（Keymap Editorのため）
+    // macros { ... } は不要
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
+            // label は非推奨なので付けない
             #binding-cells = <2>;
+            // tap（先頭）で &to 0、hold（後段）で &mo 1（例：Function_Layer=レイヤ1）
+            bindings = <&to 0>, <&mo 1>;
             tapping-term-ms = <200>;
+            flavor = "balanced";
         };
-
     };
-
 
     keymap {
         compatible = "zmk,keymap";
@@ -46,6 +45,7 @@
             >;
         };
 
+        // 例として Function_Layer を「レイヤ1」と想定
         Function_Layer {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
@@ -92,7 +92,6 @@
         };
 
         LAYER_6 {
-            bindings = <
             bindings = <
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
