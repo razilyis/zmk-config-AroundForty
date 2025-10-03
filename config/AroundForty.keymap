@@ -16,14 +16,12 @@
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_TAP_TO_0";
+            bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
-
-            bindings = <&to 0 &mo 1>;
-
             tapping-term-ms = <200>;
-            flavor = "balanced";
         };
-    };
 
     keymap {
         compatible = "zmk,keymap";
