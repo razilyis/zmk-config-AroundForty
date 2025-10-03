@@ -1,0 +1,5 @@
+config SHIELD_ARROUNDFORTY_R
+    def_bool $(shields_list_contains,AroundForty_R)
+
+config SHIELD_ARROUNDFORTY_L
+    def_bool $(shields_list_contains,AroundForty_L)
