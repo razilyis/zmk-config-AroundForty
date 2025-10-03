@@ -16,12 +16,7 @@
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
-
-            // label は非推奨なので付けない
-
             #binding-cells = <2>;
-
-            // tap（先頭）で &to 0、hold（後段）で &mo 1（例：Function_Layer=レイヤ1）
 
             bindings = <&to 0 &mo 1>;
 
