@@ -13,11 +13,6 @@
     combos { compatible = "zmk,combos"; };
 
 
-    behaviors {
-
-
-
-    };
 
     keymap {
         compatible = "zmk,keymap";
