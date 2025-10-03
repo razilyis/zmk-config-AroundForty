@@ -1,5 +1,18 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
+
+/ {
+    chosen {
+        /* これで ZMK Studio の RPC を USB CDC-ACM 経由に固定 */
+        zmk,studio-uart = &cdc_acm_uart0;
+    };
+};
+
+/* Xiao nRF52840 の USB デバイスを明示的に有効化（未有効なら） */
+&usbd {
+    status = "okay";
+};
+
 / {
     chosen {
        zmk,physical-layout = &moga_physical_layout;
