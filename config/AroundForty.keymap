@@ -8,11 +8,6 @@
     quick-tap-ms = <0>;
 };
 
-&hold_tap {
-    // 全体設定を入れたい場合（任意）
-    // tapping-term-ms = <200>;
-    // flavor = "balanced";
-};
 
 / {
     combos { compatible = "zmk,combos"; };
