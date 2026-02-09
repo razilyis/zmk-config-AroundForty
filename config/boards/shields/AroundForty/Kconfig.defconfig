@@ -1,4 +1,4 @@
-if SHIELD_ARROUNDFORTY_R
+if SHIELD_AROUNDFORTY_R
 
 config ZMK_KEYBOARD_NAME
     default "AroundForty_R"
@@ -11,7 +11,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
-if SHIELD_ARROUNDFORTY_L
+if SHIELD_AROUNDFORTY_L
 
 config ZMK_KEYBOARD_NAME
     default "AroundForty_L"
