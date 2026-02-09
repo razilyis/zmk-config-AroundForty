@@ -3,6 +3,6 @@ id: AroundForty
 name: AroundForty
 type: shield
 url: https://github.com/razilyis/zmk-config-AroundForty
-requires: [seeeduino_xiao_ble]
+requires: [xiao_ble]
 features:
   - keys
